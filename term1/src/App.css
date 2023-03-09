@@ -32,7 +32,121 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Fonts */
+.Libre {
+  font-family: 'Libre Baskerville', serif;
+  src: url("./fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf");
+}
+
+.Mulish {
+  font-family: 'Mulish', sans-serif;
+  src: url("./fonts/Mulish/static/Mulish-Black.ttf");
+}
+
+.Font_Title {
+  font-size: xx-large !important;
+}
+
+.Font_Body {
+  font-size: larger;
+}
+
+.Bold {
+  font-weight: 900 !important;
+}
+
+/* Universal styling */
+
+.body_default {
+  background-color: #00BDFF;
+}
+
+.inline {
+  display: inline;
+}
+
+/* Navbar */
+
+.nav_bg {
+  background: linear-gradient(90.28deg, #DB00FF 0%, #00BDFF 52.58%, #00FFF0 100%);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav_text {
+  color: white;
+
+  margin-right: 20px
+}
+
+.account_img {
+  width: 66px;
+  height: 66px;
+
+  margin-right: 20px;
+}
+
+/* Landing Page */
+
+.crypto_card {
+  width: 40%;
+
+  margin-top: 30px;
+  margin-left: 6%;
+
+  float: left;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.crypto_card_1 {
+  background: linear-gradient(115.47deg, #85E8F6 0.46%, #196296 99.26%);
+}
+
+.crypto_card_2 {
+  background: linear-gradient(115.47deg, #196296 0.46%, #85E8F6 99.26%);
+}
+
+.crypto_img {
+  width: auto;
+  height: 100px;
+
+  margin: 5px;
+}
+
+.Summary {
+  height: auto;
+  width: auto;
+
+  text-align: center;
+
+  margin-top: 25px;
+
+  padding-left: 70px;
+  padding-right: 100px;
+}
+
+.small_card {
+  width: 17%;
+
+  margin-top: 30px;
+  margin-left: 6%;
+
+  float: left;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.small_card_up {
+  margin-top: -50px;
+}
+
+.small_card_down {
+  margin-bottom: -50px;
 }
