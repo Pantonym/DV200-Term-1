@@ -1,3 +1,5 @@
+/* React Default Inclusions */
+
 .App {
   text-align: center;
 }
@@ -39,52 +41,78 @@
 }
 
 /* Fonts */
+/* --Title Font */
 .Libre {
   font-family: 'Libre Baskerville', serif;
   src: url("./fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf");
 }
 
+/* --Body Font */
 .Mulish {
   font-family: 'Mulish', sans-serif;
   src: url("./fonts/Mulish/static/Mulish-Black.ttf");
 }
 
+/* --Font Sizes */
 .Font_Title {
   font-size: xx-large !important;
 }
 
-.Font_Body {
-  font-size: larger;
+.Font_Subtitle {
+  font-size: x-large !important;
 }
 
+.Font_Body {
+  font-size: larger !important;
+}
+
+/* --Font Weights */
 .Bold {
   font-weight: 900 !important;
 }
 
-/* Universal styling */
+/* --Font Colours */
+.white {
+  color: white;
+}
 
+/* Universal styling */
+/* --Body */
 .body_default {
   background-color: #00BDFF;
 }
 
+/* --Display Types */
 .inline {
   display: inline;
 }
 
-/* Navbar */
-
-.nav_bg {
-  background: linear-gradient(90.28deg, #DB00FF 0%, #00BDFF 52.58%, #00FFF0 100%);
-
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.left {
+  float: left;
 }
 
+.right {
+  float: right;
+}
+
+/* Navbar */
+/* --Background Colour */
+.nav_bg {
+  background: linear-gradient(90.28deg, #DB00FF 0%, #0031AF 52.58%, #010041 100%);
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  padding: 0%;
+}
+
+/* --Nav item text */
 .nav_text {
   color: white;
 
-  margin-right: 20px
+  margin-right: 20px;
 }
 
+/* --Account Image */
 .account_img {
   width: 66px;
   height: 66px;
@@ -92,27 +120,56 @@
   margin-right: 20px;
 }
 
-/* Landing Page */
+/* Footer */
+/* --Div containing all elements */
+.Footer_Div {
+  width: 100%;
+  height: 35px !important;
 
+  padding-top: 4px;
+
+  background-color: Black;
+}
+
+/* --Text elements */
+.Footer_lbl {
+  margin-right: 50px;
+}
+
+/* Landing Page */
+/* --Title for top coin */
+.Crypto_Label_Left {
+  padding-left: 6%;
+
+  color: white;
+}
+
+/* --Title for second best coin */
+.Crypto_Label_Right {
+  padding-right: 38%;
+
+  color: white;
+}
+
+/* --Cards containing top two coins */
 .crypto_card {
   width: 40%;
 
   margin-top: 30px;
   margin-left: 6%;
 
+  padding: 10px;
+
   float: left;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25);
+
+  background: linear-gradient(115.47deg, #0B1C3E 0.46%, #0B1C3E 99.26%);
+
+  color: white;
 }
 
-.crypto_card_1 {
-  background: linear-gradient(115.47deg, #85E8F6 0.46%, #196296 99.26%);
-}
-
-.crypto_card_2 {
-  background: linear-gradient(115.47deg, #196296 0.46%, #85E8F6 99.26%);
-}
-
+/* ----Image inside cards of top two coins' logos */
 .crypto_img {
   width: auto;
   height: 100px;
@@ -120,9 +177,22 @@
   margin: 5px;
 }
 
+/* --Horizontal rule splitting summary */
+.landing_split { 
+  width: 88%;
+
+  border: 1px solid grey;
+  border-radius: 7px;
+
+  margin: auto;
+}
+
+/* --Project summary */
 .Summary {
   height: auto;
-  width: auto;
+  width: 80%;
+
+  margin: auto;
 
   text-align: center;
 
@@ -130,8 +200,11 @@
 
   padding-left: 70px;
   padding-right: 100px;
+
+  color: white;
 }
 
+/* --Small cards containing top 3-6 coins */
 .small_card {
   width: 17%;
 
@@ -141,12 +214,16 @@
   float: left;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25);
+
+  background: #0B1C3E !important;
 }
 
+/* ----Makes the card sit above the rest */
 .small_card_up {
   margin-top: -50px;
 }
 
+/* ----Makes teh card sit below the rest */
 .small_card_down {
   margin-bottom: -50px;
 }
