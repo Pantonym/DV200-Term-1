@@ -9,7 +9,7 @@ import { Nav } from "react-bootstrap";
 function BasicNavbar() {
     return (
         <Navbar className="nav_bg" sticky="top">
-            <Container>
+            <Container style={{maxWidth: '100%', paddingLeft: '75px', paddingRight: '75px'}}>
                     <Navbar.Brand className="nav_text" href="/">
                         <img className="account_img inline" src={logo} alt="Logo"></img>
                         <h4 className="nav_text inline" >Account</h4>
