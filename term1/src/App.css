@@ -178,7 +178,7 @@
 }
 
 /* --Horizontal rule splitting summary */
-.landing_split { 
+.landing_split {
   width: 88%;
 
   border: 1px solid grey;
@@ -223,7 +223,9 @@
   margin-top: -50px;
 }
 
-/* ----Makes teh card sit below the rest */
+/* ----Makes the card sit below the rest */
 .small_card_down {
   margin-bottom: -50px;
 }
+
+/* Comparison Page */
