@@ -98,26 +98,23 @@
 /* Navbar */
 /* --Background Colour */
 .nav_bg {
-  background: linear-gradient(90.28deg, #DB00FF 0%, #0031AF 52.58%, #010041 100%);
+  width: 150px;
+  height: 100%;
+  margin-top: -150px;
+  margin-left: 17px;
+
+  background: white;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-  padding: 0%;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+
+  padding-left: 30px !important;
 }
 
-/* --Nav item text */
-.nav_text {
-  color: white;
-
-  margin-right: 20px;
-}
-
-/* --Account Image */
-.account_img {
-  width: 66px;
-  height: 66px;
-
-  margin-right: 20px;
+a:hover {
+  color: #0B1C3E !important;
 }
 
 /* Footer */
@@ -137,6 +134,18 @@
 }
 
 /* Landing Page */
+
+.LandingDisplay {
+  background: #000C24;
+  height: 100%;
+  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 80px;
+}
+
+
 /* --Title for top coin */
 .Crypto_Label_Left {
   padding-left: 6%;

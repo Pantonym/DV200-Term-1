@@ -148,7 +148,7 @@ function Landing() {
 
     return (
         // Display the data
-        <div style={{ background: '#000C24', height: '100%', paddingBottom: '150px', display: 'flex', flexDirection: 'column' }}>
+        <div className="LandingDisplay">
 
             <div>
 
