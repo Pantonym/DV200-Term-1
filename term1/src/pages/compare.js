@@ -19,7 +19,7 @@ import { Col, Row, Container, Card } from "react-bootstrap";
 function Compare() {
 
     const [cryptos, setCryptos] = useState([]);
-    
+
     const [found1, setFound1] = useState({});
     const [found2, setFound2] = useState({});
     const [found3, setFound3] = useState({});
@@ -170,6 +170,10 @@ function Compare() {
         // Used to format numbers, but not currency
         var nf = new Intl.NumberFormat();
 
+        console.log(found1.csupply);
+        console.log(found2);
+        console.log(found3);
+
         setCoinDataBar({
             labels: [
                 [found1.name + ':', nf.format(found1.csupply)],
@@ -196,77 +200,173 @@ function Compare() {
 
         <div style={{ backgroundColor: '#000C24', paddingTop: '50px' }}>
 
-            <Card className="graph_card border-light">
-                <Container>
-                    <Row>
+            <Container style={{ maxWidth: '90%' }}>
+                <Row>
 
-                        <Card.Title>
+                    <Col>
+                        <Card className="graph_card border-light">
+                            <Container>
+                                <Row>
 
-                            <select onChange={(a) => {
-                                let Coinrank = a.target.value - 1;
-                                console.log(Coinrank);
+                                    <Card.Title>
 
-                                const Found = cryptos.find(obj => {
-                                    return obj.rank === (Coinrank + 1)
-                                })
+                                        <select onChange={(a) => {
+                                            let Coinrank = a.target.value - 1;
+                                            console.log(Coinrank);
 
-                                console.log(Found);
-                                setFound1(Found);
+                                            const Found = cryptos.find(obj => {
+                                                return obj.rank === (Coinrank + 1)
+                                            })
 
-                                RedrawBar(found1, found2, found3);
-                            }}>
+                                            console.log(Found);
+                                            setFound1(Found);
 
-                                {Array.isArray(cryptos)
-                                    ? cryptos.map((crypto) => {
-                                        return <option key={crypto.id} value={crypto.rank}>{crypto.name}</option>;
-                                    })
-                                    : null}
+                                            RedrawBar(Found, found2, found3);
 
-                            </select>
+                                        }}>
 
-                            <br></br>
+                                            {Array.isArray(cryptos)
+                                                ? cryptos.map((crypto) => {
+                                                    return <option key={crypto.id} value={crypto.rank}>{crypto.name}</option>;
+                                                })
+                                                : null}
 
-                            Current Supply vs Maximum Supply
-                        </Card.Title>
+                                        </select>
 
-                        <Card.Body>
+                                        <br></br>
 
-                            <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '100px' }}>
-                                <BarChart ChartData={CoinDataBar} />
-                            </div>
+                                        Current Supply vs Maximum Supply
+                                    </Card.Title>
 
-                        </Card.Body>
+                                    <Card.Body>
 
-                    </Row>
-                </Container>
-            </Card>
+                                        <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '100px' }}>
+                                            <BarChart ChartData={CoinDataBar} />
+                                        </div>
 
-            <Row>
+                                    </Card.Body>
 
-                <Col></Col>
-                <Col>
-                    <div style={{ height: '350px', padding: '25px', alignSelf: 'center' }}>
-                        <p className="Libre Bold" style={{ color: 'grey' }}>Price in USD</p>
-                        <PieChart ChartData={CoinDataPie} />
-                    </div>
-                </Col>
-                <Col></Col>
+                                </Row>
+                            </Container>
+                        </Card>
+                    </Col>
 
-            </Row>
+                    <Col>
+                        <Card className="graph_card border-light">
+                            <Container>
+                                <Row>
 
-            <Row>
+                                    <Card.Title>
 
-                <Col></Col>
-                <Col>
-                    <div style={{ height: 'auto', width: '550px', padding: '25px', alignSelf: 'center' }}>
-                        <RadarChart ChartData={CoinDataRadar} />
-                    </div>
-                </Col>
-                <Col></Col>
+                                        <select onChange={(a) => {
+                                            let Coinrank = a.target.value - 1;
+                                            console.log(Coinrank);
 
-            </Row>
+                                            const Found = cryptos.find(obj => {
+                                                return obj.rank === (Coinrank + 1)
+                                            })
 
-        </div>
+                                            console.log(Found);
+                                            setFound1(Found);
+
+                                            RedrawBar(Found, found2, found3);
+
+                                        }}>
+
+                                            {Array.isArray(cryptos)
+                                                ? cryptos.map((crypto) => {
+                                                    return <option key={crypto.id} value={crypto.rank}>{crypto.name}</option>;
+                                                })
+                                                : null}
+
+                                        </select>
+
+                                        <br></br>
+
+                                        Current Supply vs Maximum Supply
+                                    </Card.Title>
+
+                                    <Card.Body>
+
+                                        <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '30%' }}>
+                                            <PieChart ChartData={CoinDataPie} />
+                                        </div>
+
+                                    </Card.Body>
+
+                                </Row>
+                            </Container>
+                        </Card>
+                    </Col>
+
+                </Row>
+
+                <Row style={{ width: '100%', display: 'inline' }}>
+
+                    <Card className="graph_card border-light" style={{ maxWidth: '90%' }}>
+                        <Container>
+                            <Row>
+
+                                <Card.Title>
+
+                                    <select onChange={(a) => {
+                                        let Coinrank = a.target.value - 1;
+                                        console.log(Coinrank);
+
+                                        const Found = cryptos.find(obj => {
+                                            return obj.rank === (Coinrank + 1)
+                                        })
+
+                                        console.log(Found);
+                                        setFound1(Found);
+
+                                        RedrawBar(Found, found2, found3);
+
+                                    }}>
+
+                                        {Array.isArray(cryptos)
+                                            ? cryptos.map((crypto) => {
+                                                return <option key={crypto.id} value={crypto.rank}>{crypto.name}</option>;
+                                            })
+                                            : null}
+
+                                    </select>
+
+                                    <br></br>
+
+                                    Current Supply vs Maximum Supply
+                                </Card.Title>
+
+                                <Card.Body>
+
+                                    <div style={{ float: 'left', height: 'auto', width: '500px', paddingTop: '25px', alignSelf: 'center', paddingBottom: '0px' }}>
+                                        <RadarChart ChartData={CoinDataRadar} />
+                                    </div>
+
+                                    <p className="Mulish Font_Body" style={{ width: '500px', float: 'left', marginLeft: '20%' }}>
+                                        <br></br>
+                                        This data analyses the amount of coins traded within the last 24 hours within both the primary
+                                        and secondary market.
+                                        <br></br>
+                                        <br></br>
+                                        It also compares the current supply, the amount of coins currently being bought and sold, with the
+                                        total supply, which is the current supply as well as any coins that have been lost.
+                                        <br></br>
+                                        <br></br>
+                                        Finally, it also compares the maximum supply that is allowed to be in circulation. For example, 
+                                        Bitcoin has a maximum supply of 21, 000. Once its current amount hits that maximum, no other coins
+                                        can be mined. Some coins, such as Ethereum, do not have a maximum yet.
+                                    </p>
+
+                                </Card.Body>
+
+                            </Row>
+                        </Container>
+                    </Card>
+
+                </Row>
+            </Container>
+        </div >
 
     )
 }
