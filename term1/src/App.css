@@ -102,7 +102,7 @@
   height: 300px;
   margin-left: 10px;
 
-  background-color: #00BDFF ;
+  background-color: #00BDFF;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -213,28 +213,25 @@ a:hover {
   color: white;
 }
 
-/* --Small cards containing top 3-6 coins */
-.small_card {
-  width: 17%;
+/* Comparison Page */
+.graph_card {
+  width: 800px;
 
-  margin-top: 30px;
-  margin-left: 6%;
-
-  float: left;
+  margin-left: 10%;
+  padding-top: 30px;
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), -4px 0px 4px rgba(0, 0, 0, 0.25);
 
-  background: #320e52 !important;
+  background: linear-gradient(115.47deg, #0B1C3E 0.46%, #0B1C3E 99.26%);
+
+  color: white;
 }
 
-/* ----Makes the card sit above the rest */
-.small_card_up {
-  margin-top: -50px;
-}
+select {
+  width: 100px;
+  background-color: #0B1C3E;
 
-/* ----Makes the card sit below the rest */
-.small_card_down {
-  margin-bottom: -50px;
-}
+  color: white;
 
-/* Comparison Page */
+  border: none;
+}

@@ -13,10 +13,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 // Import bootstrap elements 
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row, Container, Card } from "react-bootstrap";
 
 // Display data
 function Compare() {
+
+    const [cryptos, setCryptos] = useState([]);
+    
+    const [found1, setFound1] = useState({});
+    const [found2, setFound2] = useState({});
+    const [found3, setFound3] = useState({});
 
     // --Bar Chart
     const [CoinDataBar, setCoinDataBar] = useState([]);
@@ -34,6 +40,7 @@ function Compare() {
         axios.get('https://api.coinlore.net/api/tickers/')
             .then((response) => {
 
+                setCryptos(response.data.data);
                 let AllCoins = response.data;
                 console.log(AllCoins);
 
@@ -44,16 +51,16 @@ function Compare() {
                 var CurrentSupply = [];
                 CurrentSupply.push(AllCoins.data[0].csupply);
                 CurrentSupply.push(AllCoins.data[1].csupply);
-                CurrentSupply.push(AllCoins.data[2].csupply);
                 CurrentSupply.push(AllCoins.data[3].csupply);
-                CurrentSupply.push(AllCoins.data[4].csupply);
 
                 var CurrentMaxSupply = [];
                 CurrentMaxSupply.push(AllCoins.data[0].msupply);
-                CurrentMaxSupply.push(AllCoins.data[1].csupply);
-                CurrentMaxSupply.push(AllCoins.data[2].csupply);
-                CurrentMaxSupply.push(AllCoins.data[3].csupply);
-                CurrentMaxSupply.push(AllCoins.data[4].csupply);
+                CurrentMaxSupply.push(AllCoins.data[1].msupply);
+                CurrentMaxSupply.push(AllCoins.data[3].msupply);
+
+                setFound1(AllCoins.data[0]);
+                setFound2(AllCoins.data[1]);
+                setFound3(AllCoins.data[3]);
 
                 // ----Pie Chart Chart Variables
                 var CurrentPriceUSD = [];
@@ -98,19 +105,17 @@ function Compare() {
                     labels: [
                         [CurrentNames[0] + ':', nf.format(CurrentSupply[0])],
                         [CurrentNames[1] + ':', nf.format(CurrentSupply[1])],
-                        [CurrentNames[2] + ':', nf.format(CurrentSupply[2])],
-                        [CurrentNames[3] + ':', nf.format(CurrentSupply[3])],
-                        [CurrentNames[4] + ':', nf.format(CurrentSupply[4])]
+                        [CurrentNames[2] + ':', nf.format(CurrentSupply[2])]
                     ],
                     datasets: [
                         {
                             label: 'Current Supply',
-                            data: CurrentSupply,
+                            data: [CurrentSupply[0], CurrentSupply[1], CurrentSupply[2]],
                             backgroundColor: '#00BDFF'
                         },
                         {
                             label: 'Current Maximum Supply',
-                            data: CurrentMaxSupply,
+                            data: [CurrentMaxSupply[0], CurrentMaxSupply[1], CurrentMaxSupply[2]],
                             backgroundColor: '#db2f15'
                         }
                     ]
@@ -159,47 +164,108 @@ function Compare() {
         </div>
     }
 
+    // function to redraw the bar with the new values
+    const RedrawBar = (found1, found2, found3) => {
+
+        // Used to format numbers, but not currency
+        var nf = new Intl.NumberFormat();
+
+        setCoinDataBar({
+            labels: [
+                [found1.name + ':', nf.format(found1.csupply)],
+                [found2.name + ':', nf.format(found2.csupply)],
+                [found3.name + ':', nf.format(found3.csupply)]
+            ],
+            datasets: [
+                {
+                    label: 'Current Supply',
+                    data: [nf.format(found1.csupply), nf.format(found2.csupply), nf.format(found3.csupply)],
+                    backgroundColor: '#00BDFF'
+                },
+                {
+                    label: 'Current Maximum Supply',
+                    data: [nf.format(found1.msupply), nf.format(found2.msupply), nf.format(found3.msupply)],
+                    backgroundColor: '#db2f15'
+                }
+            ]
+        });
+
+    }
+
     return (
 
-        <div style={{ backgroundColor: '#000C24' }}>
-            <Container>
+        <div style={{ backgroundColor: '#000C24', paddingTop: '50px' }}>
 
-                <Row>
+            <Card className="graph_card border-light">
+                <Container>
+                    <Row>
 
-                    <Col>
-                        <div style={{ height: '550px', padding: '25px', alignSelf: 'center', paddingLeft: '100px' }}>
-                            <BarChart ChartData={CoinDataBar} />
-                        </div>
-                    </Col>
+                        <Card.Title>
 
-                </Row>
+                            <select onChange={(a) => {
+                                let Coinrank = a.target.value - 1;
+                                console.log(Coinrank);
 
-                <Row>
+                                const Found = cryptos.find(obj => {
+                                    return obj.rank === (Coinrank + 1)
+                                })
 
-                    <Col></Col>
-                    <Col>
-                        <div style={{ height: '550px', padding: '25px', alignSelf: 'center' }}>
-                            <p className="Libre Bold" style={{ color: 'grey' }}>Price in USD</p>
-                            <PieChart ChartData={CoinDataPie} />
-                        </div>
-                    </Col>
-                    <Col></Col>
+                                console.log(Found);
+                                setFound1(Found);
 
-                </Row>
+                                RedrawBar(found1, found2, found3);
+                            }}>
 
-                <Row>
+                                {Array.isArray(cryptos)
+                                    ? cryptos.map((crypto) => {
+                                        return <option key={crypto.id} value={crypto.rank}>{crypto.name}</option>;
+                                    })
+                                    : null}
 
-                    <Col></Col>
-                    <Col>
-                        <div style={{ height: 'auto', width: '750px', padding: '25px', alignSelf: 'center' }}>
-                            <RadarChart ChartData={CoinDataRadar} />
-                        </div>
-                    </Col>
-                    <Col></Col>
+                            </select>
 
-                </Row>
+                            <br></br>
 
-            </Container>
+                            Current Supply vs Maximum Supply
+                        </Card.Title>
+
+                        <Card.Body>
+
+                            <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '100px' }}>
+                                <BarChart ChartData={CoinDataBar} />
+                            </div>
+
+                        </Card.Body>
+
+                    </Row>
+                </Container>
+            </Card>
+
+            <Row>
+
+                <Col></Col>
+                <Col>
+                    <div style={{ height: '350px', padding: '25px', alignSelf: 'center' }}>
+                        <p className="Libre Bold" style={{ color: 'grey' }}>Price in USD</p>
+                        <PieChart ChartData={CoinDataPie} />
+                    </div>
+                </Col>
+                <Col></Col>
+
+            </Row>
+
+            <Row>
+
+                <Col></Col>
+                <Col>
+                    <div style={{ height: 'auto', width: '550px', padding: '25px', alignSelf: 'center' }}>
+                        <RadarChart ChartData={CoinDataRadar} />
+                    </div>
+                </Col>
+                <Col></Col>
+
+            </Row>
+
         </div>
 
     )
