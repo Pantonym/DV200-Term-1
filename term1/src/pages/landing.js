@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 // Import Bootstrap functionality
-import { Card } from "react-bootstrap";
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 // Logo images
 import bitcoin_logo from '../images/Bitcoin_White.svg';
@@ -150,143 +150,156 @@ function Landing() {
         // Display the data
         <div className="LandingDisplay">
 
-            <div>
+            <Container style={{margin: 'none', padding: 'none', maxWidth: '90%'}}>
 
-                <br></br>
+                <row>
 
-                {/* --Titles for the top 2 coins */}
-                <label className="left Crypto_Label_Left Font_Title Bold Libre">Top Coin:</label>
-                <label className="right Crypto_Label_Right Font_Title Bold Libre">Second Place:</label>
+                    <Col xs={1}>gg</Col>
 
-                <br></br>
+                    <Col>
+                        <div>
 
-                {/* --First of two cards displaying the current two currency leaders */}
-                <Card className="crypto_card border-light">
+                            <br></br>
 
-                    <Card.Img variant="top" src={bitcoin_logo} className='crypto_img' />
+                            {/* --Titles for the top 2 coins */}
+                            <label className="left Crypto_Label_Left Font_Title Bold Libre">Top Coin:</label>
+                            <label className="right Crypto_Label_Right Font_Title Bold Libre">Second Place:</label>
 
-                    <Card.Body>
+                            <br></br>
 
-                        <Card.Title className="Libre Font_Title Bold">{Coin1Name}</Card.Title>
-                        <Card.Text className="Mulish Font_Body">USD: {Coin1Value}</Card.Text>
-                        <Card.Text className="Mulish Font_Body">In Bitcoin: {Coin1ValueBtc} BTC</Card.Text>
-                        <Card.Text className="Mulish Font_Body">Current Rank: {Coin1Rank}</Card.Text>
+                            {/* --First of two cards displaying the current two currency leaders */}
+                            <Card className="crypto_card border-light">
 
-                    </Card.Body>
+                                <Card.Img variant="top" src={bitcoin_logo} className='crypto_img' />
 
-                </Card>
+                                <Card.Body>
 
-                <Card className="crypto_card border-light">
+                                    <Card.Title className="Libre Font_Title Bold">{Coin1Name}</Card.Title>
+                                    <Card.Text className="Mulish Font_Body">USD: {Coin1Value}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {Coin1ValueBtc} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">Current Rank: {Coin1Rank}</Card.Text>
 
-                    <Card.Img variant="top" src={ethereum_logo} className='crypto_img' />
+                                </Card.Body>
 
-                    <Card.Body>
+                            </Card>
 
-                        <Card.Title className="Libre Font_Title Bold">{Coin2Name}</Card.Title>
-                        <Card.Text className="Mulish Font_Body">USD: {Coin2Value}</Card.Text>
-                        <Card.Text className="Mulish Font_Body">In Bitcoin: {Coin2ValueBtc} BTC</Card.Text>
-                        <Card.Text className="Mulish Font_Body">Current Rank: {Coin2Rank}</Card.Text>
+                            <Card className="crypto_card border-light">
 
-                    </Card.Body>
+                                <Card.Img variant="top" src={ethereum_logo} className='crypto_img' />
 
-                </Card>
+                                <Card.Body>
 
-            </div>
+                                    <Card.Title className="Libre Font_Title Bold">{Coin2Name}</Card.Title>
+                                    <Card.Text className="Mulish Font_Body">USD: {Coin2Value}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {Coin2ValueBtc} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">Current Rank: {Coin2Rank}</Card.Text>
 
-            {/* --Horizontal Rule to split the two sections for increased readability*/}
-            <br></br>
-            <hr className="landing_split"></hr>
+                                </Card.Body>
 
-            <div>
+                            </Card>
 
-                {/* Summary/Breakdown */}
-                <p className="Summary Libre Font_Subtitle">
-                    This dataset includes information about {TotalCoins} cryptocurrencies.
-                    <br></br>
-                    <br></br>
-                    Most importantly, it includes their rank, price in US Dollars, their price in Bitcoin, their total market value
-                    and total market supply (among others). They will be compared to one another with a bar graph, a pie chart and
-                    a radar chart.
-                    <br></br>
-                    <br></br>
-                    The bar graph will compare price in USD, as well as current market supply. The pie chart will compare the total
-                    market volume (total amount of coins currently in supply) with the market volume of several different coins. This
-                    will reveal each coin's market share when compared to each other. The radar chart will compare the current market
-                    share, the price in Bitcoin, the total supply and the number of coins in current supply.
-                    <br></br>
-                    <br></br>
-                    Finally, a timeline will be used to display and compare the price changes (in percentage) of multiple different
-                    cryptocurrencies within the last 1 hour, 1 day, and 1 week.
-                </p>
+                        </div>
 
-            </div>
+                        {/* --Horizontal Rule to split the two sections for increased readability*/}
+                        <br></br>
+                        <hr className="landing_split"></hr>
 
-            {/* --Horizontal Rule to split the two sections for increased readability*/}
-            <br></br>
-            <hr className="landing_split"></hr>
+                        <div>
 
-            {/* Four small cards that will contain information */}
-            <br></br>
-            {/* --Title for the 4 coins */}
-            <label className="Font_Title white Libre">Runner ups to the top 2 Coins:</label>
-            <br></br>
+                            {/* Summary/Breakdown */}
+                            <p className="Summary Libre Font_Subtitle">
+                                This dataset includes information about {TotalCoins} cryptocurrencies.
+                                <br></br>
+                                <br></br>
+                                Most importantly, it includes their rank, price in US Dollars, their price in Bitcoin, their total market value
+                                and total market supply (among others). They will be compared to one another with a bar graph, a pie chart and
+                                a radar chart.
+                                <br></br>
+                                <br></br>
+                                The bar graph will compare price in USD, as well as current market supply. The pie chart will compare the total
+                                market volume (total amount of coins currently in supply) with the market volume of several different coins. This
+                                will reveal each coin's market share when compared to each other. The radar chart will compare the current market
+                                share, the price in Bitcoin, the total supply and the number of coins in current supply.
+                                <br></br>
+                                <br></br>
+                                Finally, a timeline will be used to display and compare the price changes (in percentage) of multiple different
+                                cryptocurrencies within the last 1 hour, 1 day, and 1 week.
+                            </p>
 
-            {/* --4 cards */}
-            <div style={{ paddingTop: '75px' }}>
+                        </div>
 
-                <Card className="small_card border-dark small_card_down">
+                        {/* --Horizontal Rule to split the two sections for increased readability*/}
+                        <br></br>
+                        <hr className="landing_split"></hr>
 
-                    <Card.Body>
+                        {/* Four small cards that will contain information */}
+                        <br></br>
+                        {/* --Title for the 4 coins */}
+                        <label className="Font_Title white Libre">Runner ups to the top 2 Coins:</label>
+                        <br></br>
 
-                        <Card.Title className="Libre Font_Title Bold white"> {Coin3Name} </Card.Title>
-                        <Card.Text className="Mulish Font_Body white">USD: {Coin3Value}</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin3ValueBtc} BTC</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">Current Rank: {Coin3Rank}</Card.Text>
+                        {/* --4 cards */}
+                        <div style={{ paddingTop: '75px' }}>
 
-                    </Card.Body>
+                            <Card className="small_card border-dark small_card_down">
 
-                </Card>
+                                <Card.Body>
 
-                <Card className="small_card border-dark small_card_up">
+                                    <Card.Title className="Libre Font_Title Bold white"> {Coin3Name} </Card.Title>
+                                    <Card.Text className="Mulish Font_Body white">USD: {Coin3Value}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin3ValueBtc} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">Current Rank: {Coin3Rank}</Card.Text>
 
-                    <Card.Body>
+                                </Card.Body>
 
-                        <Card.Title className="Libre Font_Title Bold white"> {Coin4Name} </Card.Title>
-                        <Card.Text className="Mulish Font_Body white">USD: {Coin4Value}</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin4ValueBtc} BTC</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">Current Rank: {Coin4Rank}</Card.Text>
+                            </Card>
 
-                    </Card.Body>
+                            <Card className="small_card border-dark small_card_up">
 
-                </Card>
+                                <Card.Body>
 
-                <Card className="small_card border-dark small_card_down">
+                                    <Card.Title className="Libre Font_Title Bold white"> {Coin4Name} </Card.Title>
+                                    <Card.Text className="Mulish Font_Body white">USD: {Coin4Value}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin4ValueBtc} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">Current Rank: {Coin4Rank}</Card.Text>
 
-                    <Card.Body>
+                                </Card.Body>
 
-                        <Card.Title className="Libre Font_Title Bold white"> {Coin5Name} </Card.Title>
-                        <Card.Text className="Mulish Font_Body white">USD: {Coin5Value}</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin5ValueBtc} BTC</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">Current Rank: {Coin5Rank}</Card.Text>
+                            </Card>
 
-                    </Card.Body>
+                            <Card className="small_card border-dark small_card_down">
 
-                </Card>
+                                <Card.Body>
 
-                <Card className="small_card border-dark small_card_up">
+                                    <Card.Title className="Libre Font_Title Bold white"> {Coin5Name} </Card.Title>
+                                    <Card.Text className="Mulish Font_Body white">USD: {Coin5Value}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin5ValueBtc} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">Current Rank: {Coin5Rank}</Card.Text>
 
-                    <Card.Body>
+                                </Card.Body>
 
-                        <Card.Title className="Libre Font_Title Bold white"> {Coin6Name} </Card.Title>
-                        <Card.Text className="Mulish Font_Body white">USD: {Coin6Value}</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin6ValueBtc} BTC</Card.Text>
-                        <Card.Text className="Mulish Font_Body white">Current Rank: {Coin6Rank}</Card.Text>
+                            </Card>
 
-                    </Card.Body>
+                            <Card className="small_card border-dark small_card_up">
 
-                </Card>
+                                <Card.Body>
 
-            </div>
+                                    <Card.Title className="Libre Font_Title Bold white"> {Coin6Name} </Card.Title>
+                                    <Card.Text className="Mulish Font_Body white">USD: {Coin6Value}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">In Bitcoin: {Coin6ValueBtc} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body white">Current Rank: {Coin6Rank}</Card.Text>
+
+                                </Card.Body>
+
+                            </Card>
+
+                        </div>
+
+                    </Col>
+
+                </row>
+
+            </Container>
 
         </div>
     )
