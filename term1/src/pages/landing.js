@@ -1,7 +1,3 @@
-// msupply : maximum supply
-// csupply : current supply
-// tsupply : lost coins are still counted
-
 import PieChart from "../components/PieGraph";
 
 // Import React functionality

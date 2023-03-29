@@ -63,7 +63,7 @@ function Timeline() {
                 arrPriceChange.push([AllCoins.data[1].percent_change_7d, AllCoins.data[1].percent_change_24h, AllCoins.data[1].percent_change_1h]);
                 arrPriceChange.push([AllCoins.data[2].percent_change_7d, AllCoins.data[2].percent_change_24h, AllCoins.data[2].percent_change_1h]);
 
-                // ----Bar Graph
+                // ----Timeline
                 setDataTime({
                     labels: [
                         [arrDates[0] + ' hours (7 days)'],
@@ -74,20 +74,23 @@ function Timeline() {
                         {
                             label: 'Bitcoin',
                             data: arrPriceChange[0],
-                            backgroundColor: 'rgba(0, 189, 255, 1)',
-                            borderColor: 'rgba(0, 189, 255, 0.25)'
+                            backgroundColor: 'rgba(0, 247, 255, 1)',
+                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                            tension: 0.25
                         },
                         {
                             label: 'Ethereum',
                             data: arrPriceChange[1],
                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                            borderColor: 'rgba(219, 47, 21, 0.25)'
+                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                            tension: 0.25
                         },
                         {
                             label: 'Tether',
                             data: arrPriceChange[2],
                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                            borderColor: 'rgba(220, 165, 63, 0.25)'
+                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                            tension: 0.25
                         }
                     ]
                 });
@@ -118,7 +121,7 @@ function Timeline() {
 
                 <Row>
 
-                    <Col>
+                    <Col className="Font_Body Libre">
 
                         <br></br>
 
@@ -145,20 +148,23 @@ function Timeline() {
                                         {
                                             label: Found.name,
                                             data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
-                                            backgroundColor: 'rgba(0, 189, 255, 1)',
-                                            borderColor: 'rgba(0, 189, 255, 0.25)'
+                                            backgroundColor: 'rgba(0, 247, 255, 1)',
+                                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                                            tension: 0.25
                                         },
                                         {
                                             label: found2.name,
                                             data: [found2.percent_change_7d, found2.percent_change_24h, found2.percent_change_1h],
                                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                                            borderColor: 'rgba(219, 47, 21, 0.25)'
+                                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                                            tension: 0.25
                                         },
                                         {
                                             label: found3.name,
                                             data: [found3.percent_change_7d, found3.percent_change_24h, found3.percent_change_1h],
                                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                                            borderColor: 'rgba(220, 165, 63, 0.25)'
+                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            tension: 0.25
                                         }
                                     ]
                                 });
@@ -195,20 +201,23 @@ function Timeline() {
                                         {
                                             label: found1.name,
                                             data: [found1.percent_change_7d, found1.percent_change_24h, found1.percent_change_1h],
-                                            backgroundColor: 'rgba(0, 189, 255, 1)',
-                                            borderColor: 'rgba(0, 189, 255, 0.25)'
+                                            backgroundColor: 'rgba(0, 247, 255, 1)',
+                                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                                            tension: 0.25
                                         },
                                         {
                                             label: Found.name,
                                             data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
                                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                                            borderColor: 'rgba(219, 47, 21, 0.25)'
+                                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                                            tension: 0.25
                                         },
                                         {
                                             label: found3.name,
                                             data: [found3.percent_change_7d, found3.percent_change_24h, found3.percent_change_1h],
                                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                                            borderColor: 'rgba(220, 165, 63, 0.25)'
+                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            tension: 0.25
                                         }
                                     ]
                                 });
@@ -245,20 +254,23 @@ function Timeline() {
                                         {
                                             label: found1.name,
                                             data: [found1.percent_change_7d, found1.percent_change_24h, found1.percent_change_1h],
-                                            backgroundColor: 'rgba(0, 189, 255, 1)',
-                                            borderColor: 'rgba(0, 189, 255, 0.25)'
+                                            backgroundColor: 'rgba(0, 247, 255, 1)',
+                                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                                            tension: 0.25
                                         },
                                         {
-                                            label: Found.name,
-                                            data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
+                                            label: found2.name,
+                                            data: [found2.percent_change_7d, found2.percent_change_24h, found2.percent_change_1h],
                                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                                            borderColor: 'rgba(219, 47, 21, 0.25)'
+                                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                                            tension: 0.25
                                         },
                                         {
                                             label: Found.name,
                                             data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
                                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                                            borderColor: 'rgba(220, 165, 63, 0.25)'
+                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            tension: 0.25
                                         }
                                     ]
                                 });
