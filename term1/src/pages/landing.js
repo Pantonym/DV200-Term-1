@@ -133,10 +133,10 @@ function Landing() {
                             <Col>
                                 <div style={{ height: '250px' }}>
                                     <PieChart ChartData={{
-                                        labels: [coinNames[0], coinNames[1], coinNames[2]],
+                                        labels: [coinNames[2], coinNames[1], coinNames[3]],
                                         datasets: [{
                                             label: 'Price in Bitcoin',
-                                            data: [coinValue[0], coinValue[1], coinValue[2]]
+                                            data: [coinValue[2], coinValue[1], coinValue[3]]
                                         }]
                                     }} />
                                 </div>

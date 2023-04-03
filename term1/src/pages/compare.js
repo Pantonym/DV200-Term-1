@@ -225,7 +225,7 @@ function Compare() {
                 <Row>
 
                     <Col>
-                        <Card className="graph_card border-light">
+                        <Card className="graph_card border-light" style={{marginLeft: '18%'}}>
                             <Container>
                                 <Row>
 
@@ -373,7 +373,7 @@ function Compare() {
 
                                     <Card.Body>
 
-                                        <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '100px' }}>
+                                        <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '0px' }}>
                                             <BarChart ChartData={CoinDataBar} />
                                         </div>
 
@@ -488,7 +488,7 @@ function Compare() {
 
                                     <Card.Body>
 
-                                        <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '30%' }}>
+                                        <div style={{ height: '350px', padding: '25px', alignSelf: 'center', paddingLeft: '30%', paddingLeft: '130px' }}>
                                             <PieChart ChartData={CoinDataPie} />
                                         </div>
 
@@ -661,7 +661,7 @@ function Compare() {
                                         <RadarChart ChartData={CoinDataRadar} />
                                     </div>
 
-                                    <p className="Mulish Font_Body" style={{ width: '500px', float: 'left', marginLeft: '20%' }}>
+                                    <p className="Mulish Font_Body" style={{ width: '500px', float: 'left', marginLeft: '10%' }}>
                                         <br></br>
                                         This data analyses the amount of coins traded within the last 24 hours within both the primary
                                         and secondary market.
