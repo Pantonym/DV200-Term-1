@@ -1,4 +1,5 @@
 import PieChart from "../components/PieGraph";
+import LineChart from "../components/TimelineGraph";
 
 // Import React functionality
 import React from "react";
@@ -22,6 +23,8 @@ function Landing() {
     const [CoinPricesUnFormat, setCoinPricesUnFormat] = useState([]);
     const [coinValue, setCoinValue] = useState([]);
     const [coinRank, setCoinRank] = useState([]);
+
+    const [bitcoinData, setBitcoinData] = useState([]);
 
     // --Keeps page from breaking. Will force the page to wait before data is loaded.
     const [isLoading, setLoading] = useState(true);
@@ -82,6 +85,12 @@ function Landing() {
                     varCoins.data[4].rank,
                     varCoins.data[5].rank,
                 ]);
+
+                setBitcoinData([
+                    varCoins.data[0]
+                ]);
+
+                console.log(bitcoinData);
 
                 setLoading(false);
 
@@ -155,7 +164,7 @@ function Landing() {
                             </Col>
 
                             <Col>
-                                <div style={{ height: '250px'}}>
+                                <div style={{ height: '250px' }}>
                                     <PieChart ChartData={{
                                         labels: [coinNames[0], coinNames[1], coinNames[2]],
                                         datasets: [{
@@ -172,38 +181,6 @@ function Landing() {
                 </Card>
 
                 {/* --Cards 3-4 */}
-                <Card className="crypto_card border-light">
-
-                    <Container>
-                        <Row>
-
-                            <Col>
-                                <Card.Body style={{ marginTop: '10%' }}>
-
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[2]}</Card.Title>
-                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[2]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[2]} BTC</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[2]}</Card.Text>
-
-                                </Card.Body>
-                            </Col>
-
-                            <Col>
-                                <div style={{ height: '250px' }}>
-                                    <PieChart ChartData={{
-                                        labels: [coinNames[0], coinNames[1], coinNames[2]],
-                                        datasets: [{
-                                            label: 'Current Rank',
-                                            data: [coinRank[0], coinRank[1], coinRank[2]]
-                                        }]
-                                    }} />
-                                </div>
-                            </Col>
-
-                        </Row>
-                    </Container>
-
-                </Card>
 
                 <Card className="crypto_card border-light">
 
@@ -238,7 +215,6 @@ function Landing() {
 
                 </Card>
 
-                {/* --Cards 5-6 */}
                 <Card className="crypto_card border-light">
 
                     <Container>
@@ -247,10 +223,10 @@ function Landing() {
                             <Col>
                                 <Card.Body style={{ marginTop: '10%' }}>
 
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[4]}</Card.Title>
-                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[4]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[4]} BTC</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[4]}</Card.Text>
+                                    <Card.Title className="Libre Font_Title Bold">{coinNames[2]}</Card.Title>
+                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[2]}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[2]} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[2]}</Card.Text>
 
                                 </Card.Body>
                             </Col>
@@ -258,43 +234,10 @@ function Landing() {
                             <Col>
                                 <div style={{ height: '250px' }}>
                                     <PieChart ChartData={{
-                                        labels: [coinNames[3], coinNames[4], coinNames[5]],
-                                        datasets: [{
-                                            label: 'Price in USD',
-                                            data: [CoinPricesUnFormat[3], CoinPricesUnFormat[4], CoinPricesUnFormat[5]]
-                                        }]
-                                    }} />
-                                </div>
-                            </Col>
-
-                        </Row>
-                    </Container>
-
-                </Card>
-
-                <Card className="crypto_card border-light">
-
-                    <Container>
-                        <Row>
-
-                            <Col>
-                                <Card.Body style={{ marginTop: '10%' }}>
-
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[5]}</Card.Title>
-                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[5]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[5]} BTC</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[5]}</Card.Text>
-
-                                </Card.Body>
-                            </Col>
-
-                            <Col>
-                                <div style={{ height: '250px' }}>
-                                    <PieChart ChartData={{
-                                        labels: [coinNames[3], coinNames[4], coinNames[5]],
+                                        labels: [coinNames[0], coinNames[1], coinNames[2]],
                                         datasets: [{
                                             label: 'Current Rank',
-                                            data: [coinRank[3], coinRank[4], coinRank[5]]
+                                            data: [coinRank[0], coinRank[1], coinRank[2]]
                                         }]
                                     }} />
                                 </div>
@@ -314,26 +257,104 @@ function Landing() {
             <div>
 
                 {/* Summary/Breakdown */}
-                <p className="Summary Libre Font_Subtitle">
-                    This dataset includes information about {TotalCoins} cryptocurrencies.
-                    <br></br>
-                    <br></br>
-                    Most importantly, it includes their rank, price in US Dollars, their price in Bitcoin, their total market value
-                    and total market supply (among others). They will be compared to one another with a bar graph, a pie chart and
-                    a radar chart.
-                    <br></br>
-                    <br></br>
-                    The bar graph will compare price in USD, as well as current market supply. The pie chart will compare the total
-                    market volume (total amount of coins currently in supply) with the market volume of several different coins. This
-                    will reveal each coin's market share when compared to each other. The radar chart will compare the current market
-                    share, the price in Bitcoin, the total supply and the number of coins in current supply.
-                    <br></br>
-                    <br></br>
-                    Finally, a timeline will be used to display and compare the price changes (in percentage) of multiple different
-                    cryptocurrencies within the last 1 hour, 1 day, and 1 week.
-                </p>
+
+                <Card className="crypto_card_desc border-light">
+
+                    <Card.Body>
+
+                        <Card.Text className="Summary Libre Font_Subtitle">
+
+                            This dataset includes information about {TotalCoins} cryptocurrencies.
+
+                            Most importantly, it includes their rank, price in US Dollars, their price in Bitcoin, their total market value
+                            and total market supply (among others). They will be compared to one another with a bar graph, a pie chart and
+                            a radar chart.
+
+                            The bar graph will compare price in USD, as well as current market supply. The pie chart will compare the total
+                            market volume (total amount of coins currently in supply) with the market volume of several different coins. This
+                            will reveal each coin's market share when compared to each other. The radar chart will compare the current market
+                            share, the price in Bitcoin, the total supply and the number of coins in current supply.
+
+                            Finally, a timeline will be used to display and compare the price changes (in percentage) of multiple different
+                            cryptocurrencies within the last 1 hour, 1 day, and 1 week.
+
+                        </Card.Text>
+
+                    </Card.Body>
+
+                </Card>
 
             </div>
+
+            {/* Bitcoin Summary */}
+            <Card className="crypto_card_desc border-light">
+
+                <Container>
+                    <Row>
+
+                        <Col>
+
+                            <div style={{ height: '550px', marginLeft: '100px', paddingBottom: '0px' }}>
+                                <LineChart ChartData={{
+                                    labels: [
+                                        ['7 days'],
+                                        ['24 hours'],
+                                        ['1 hour']
+                                    ],
+                                    datasets: [
+                                        {
+                                            label: 'Percentage change',
+                                            data: [bitcoinData[0].percent_change_1h, bitcoinData[0].percent_change_24h, bitcoinData[0].percent_change_7d],
+                                            backgroundColor: 'rgba(193, 66, 37, 0.2)',
+                                            borderColor: 'rgba(193, 66, 37, 0.75)',
+                                            tension: 0.25
+                                        },
+                                        {
+                                            label: 'Supply in 10 millions',
+                                            data: [bitcoinData[0].csupply / 10000000, bitcoinData[0].tsupply / 10000000, bitcoinData[0].msupply / 10000000],
+                                            backgroundColor: 'rgba(37, 166, 183, 0.2)',
+                                            borderColor: 'rgba(37, 166, 183, 0.75)',
+                                            tension: 0.25
+                                        },
+                                        {
+                                            //545 749 150 154
+                                            //19 288 102
+                                            //18 381 760 959
+                                            //19 916 646 676
+                                            label: 'Volume traded in 10 billions',
+                                            data: [bitcoinData[0].volume24 / 10000000000, bitcoinData[0].volume24a / 10000000000, bitcoinData[0].market_cap_usd / 100000000000],
+                                            backgroundColor: 'rgba(220, 165, 63, 0.2)',
+                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            tension: 0.25
+                                        }
+
+                                    ]
+                                }} />
+                            </div>
+                        </Col>
+
+                    </Row>
+
+                    <Row>
+
+                        <Col>
+                            <Card.Body>
+
+                                <Card.Title className="Libre Font_Title Bold">{bitcoinData[0].name}</Card.Title>
+                                <Card.Text className="Mulish Font_Body">USD: ${bitcoinData[0].price_usd}</Card.Text>
+                                <Card.Text className="Mulish Font_Body">In Bitcoin: {bitcoinData[0].price_btc} BTC</Card.Text>
+                                <Card.Text className="Mulish Font_Body">Current Rank: {bitcoinData[0].rank}</Card.Text>
+                                <Card.Text className="Mulish Font_Body">Current Supply: {bitcoinData[0].csupply}</Card.Text>
+                                <Card.Text className="Mulish Font_Body">Maximum Supply: {bitcoinData[0].msupply}</Card.Text>
+
+                            </Card.Body>
+                        </Col>
+
+                    </Row>
+
+                </Container>
+
+            </Card>
 
         </div >
     )

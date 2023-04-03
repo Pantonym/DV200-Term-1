@@ -394,19 +394,19 @@ function Compare() {
                                         <select style={{ marginRight: '50px' }} onChange={(a) => {
                                             let Coinrank = a.target.value - 1;
 
-                                            const Foundp = cryptos.find(obj => { return obj.rank === (Coinrank + 1) })
+                                            const Found = cryptos.find(obj => { return obj.rank === (Coinrank + 1) })
 
-                                            setFound1(Foundp);
+                                            setFound1p(Found);
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
                                                 let AllCoins = response.data;
 
                                                 setCoinDataPie({
-                                                    labels: [Foundp.name, found2p.name, found3p.name],
+                                                    labels: [Found.name, found2p.name, found3p.name],
                                                     datasets: [{
                                                         label: 'Current Price in USD',
-                                                        data: [Foundp.price_usd, found2p.price_usd, found3p.price_usd]
+                                                        data: [Found.price_usd, found2p.price_usd, found3p.price_usd]
                                                     }]
                                                 })
                                             })
@@ -424,19 +424,19 @@ function Compare() {
                                         <select style={{ marginRight: '50px' }} onChange={(a) => {
                                             let Coinrank = a.target.value - 1;
 
-                                            const Foundp = cryptos.find(obj => { return obj.rank === (Coinrank + 1) })
+                                            const Found = cryptos.find(obj => { return obj.rank === (Coinrank + 1) })
 
-                                            setFound2(Foundp);
+                                            setFound2p(Found);
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
                                                 let AllCoins = response.data;
 
                                                 setCoinDataPie({
-                                                    labels: [found1p.name, Foundp.name, found3p.name],
+                                                    labels: [found1p.name, Found.name, found3p.name],
                                                     datasets: [{
                                                         label: 'Current Price in USD',
-                                                        data: [found1p.price_usd, Foundp.price_usd, found3p.price_usd]
+                                                        data: [found1p.price_usd, Found.price_usd, found3p.price_usd]
                                                     }]
                                                 })
                                             })
@@ -454,19 +454,19 @@ function Compare() {
                                         <select onChange={(a) => {
                                             let Coinrank = a.target.value - 1;
 
-                                            const Foundp = cryptos.find(obj => { return obj.rank === (Coinrank + 1) })
+                                            const Found = cryptos.find(obj => { return obj.rank === (Coinrank + 1) })
 
-                                            setFound3(Foundp);
+                                            setFound3p(Found);
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
                                                 let AllCoins = response.data;
 
                                                 setCoinDataPie({
-                                                    labels: [found1p.name, found2p.name, Foundp.name],
+                                                    labels: [found1p.name, found2p.name, Found.name],
                                                     datasets: [{
                                                         label: 'Current Price in USD',
-                                                        data: [found1p.price_usd, found2p.price_usd, Foundp.price_usd]
+                                                        data: [found1p.price_usd, found2p.price_usd, Found.price_usd]
                                                     }]
                                                 })
                                             })
