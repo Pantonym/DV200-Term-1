@@ -157,12 +157,12 @@ function Compare() {
                         {
                             label: 'Current Supply',
                             data: [CurrentSupply[0], CurrentSupply[1], CurrentSupply[2]],
-                            backgroundColor: '#00BDFF'
+                            backgroundColor: '#8134DF'
                         },
                         {
                             label: 'Current Maximum Supply',
                             data: [CurrentMaxSupply[0], CurrentMaxSupply[1], CurrentMaxSupply[2]],
-                            backgroundColor: '#db2f15'
+                            backgroundColor: '#34DFD5'
                         }
                     ]
                 });
@@ -172,7 +172,8 @@ function Compare() {
                     labels: [CurrentNames[0], CurrentNames[1], CurrentNames[2]],
                     datasets: [{
                         label: 'Current Price in USD',
-                        data: CurrentPriceUSD
+                        data: CurrentPriceUSD,
+                        backgroundColor: ["#8134DF", "#34DFD5", "#DFCE34"]
                     }]
                 })
 
@@ -184,19 +185,19 @@ function Compare() {
                             label: CurrentNames[0] + ' Average Statistics',
                             data: CurrentStatsBit,
                             backgroundColor: 'rgba(193, 66, 37, 0.2)',
-                            borderColor: 'rgba(193, 66, 37, 0.75)'
+                            borderColor: '#8134DF'
                         },
                         {
                             label: CurrentNames[1] + ' Average Statistics',
                             data: CurrentStatsEth,
                             backgroundColor: 'rgba(37, 166, 183, 0.2)',
-                            borderColor: 'rgba(37, 166, 183, 0.75)'
+                            borderColor: '#34DFD5'
                         },
                         {
                             label: CurrentNames[2] + ' Average Statistics',
                             data: CurrentStatsBi,
                             backgroundColor: 'rgba(220, 165, 63, 0.2)',
-                            borderColor: 'rgba(220, 165, 63, 0.75)'
+                            borderColor: '#DFCE34'
                         }
 
                     ]
@@ -223,14 +224,12 @@ function Compare() {
 
             <Container style={{ maxWidth: '90%' }}>
                 <Row>
-
                     <Col>
                         <Card className="graph_card border-light" style={{marginLeft: '18%'}}>
                             <Container>
                                 <Row>
 
                                     <Card.Title>
-
                                         <select style={{ marginRight: '50px' }} onChange={(a) => {
                                             let Coinrank = a.target.value - 1;
 
@@ -239,8 +238,6 @@ function Compare() {
                                             setFound1(Found);
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
-
-                                                let AllCoins = response.data;
 
                                                 // Used to format numbers, but not currency
                                                 var nf = new Intl.NumberFormat();
@@ -255,12 +252,12 @@ function Compare() {
                                                         {
                                                             label: 'Current Supply',
                                                             data: [Found.csupply, found2.csupply, found3.csupply],
-                                                            backgroundColor: '#00BDFF'
+                                                            backgroundColor: '#8134DF'
                                                         },
                                                         {
                                                             label: 'Current Maximum Supply',
                                                             data: [Found.msupply, found2.msupply, found3.msupply],
-                                                            backgroundColor: '#db2f15'
+                                                            backgroundColor: '#34DFD5'
                                                         }
                                                     ]
                                                 });
@@ -285,8 +282,6 @@ function Compare() {
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                                let AllCoins = response.data;
-
                                                 // Used to format numbers, but not currency
                                                 var nf = new Intl.NumberFormat();
 
@@ -300,12 +295,12 @@ function Compare() {
                                                         {
                                                             label: 'Current Supply',
                                                             data: [found1.csupply, Found.csupply, found3.csupply],
-                                                            backgroundColor: '#00BDFF'
+                                                            backgroundColor: '#8134DF'
                                                         },
                                                         {
                                                             label: 'Current Maximum Supply',
                                                             data: [found1.msupply, Found.msupply, found3.msupply],
-                                                            backgroundColor: '#db2f15'
+                                                            backgroundColor: '#34DFD5'
                                                         }
                                                     ]
                                                 });
@@ -330,8 +325,6 @@ function Compare() {
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                                let AllCoins = response.data;
-
                                                 // Used to format numbers, but not currency
                                                 var nf = new Intl.NumberFormat();
 
@@ -345,12 +338,12 @@ function Compare() {
                                                         {
                                                             label: 'Current Supply',
                                                             data: [found1.csupply, found2.csupply, Found.csupply],
-                                                            backgroundColor: '#00BDFF'
+                                                            backgroundColor: '#8134DF'
                                                         },
                                                         {
                                                             label: 'Current Maximum Supply',
                                                             data: [found1.msupply, found2.msupply, Found.msupply],
-                                                            backgroundColor: '#db2f15'
+                                                            backgroundColor: '#34DFD5'
                                                         }
                                                     ]
                                                 });
@@ -388,7 +381,6 @@ function Compare() {
                         <Card className="graph_card border-light">
                             <Container>
                                 <Row>
-
                                     <Card.Title>
 
                                         <select style={{ marginRight: '50px' }} onChange={(a) => {
@@ -400,13 +392,12 @@ function Compare() {
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                                let AllCoins = response.data;
-
                                                 setCoinDataPie({
                                                     labels: [Found.name, found2p.name, found3p.name],
                                                     datasets: [{
                                                         label: 'Current Price in USD',
-                                                        data: [Found.price_usd, found2p.price_usd, found3p.price_usd]
+                                                        data: [Found.price_usd, found2p.price_usd, found3p.price_usd],
+                                                        backgroundColor: ["#8134DF", "#34DFD5", "#DFCE34"]
                                                     }]
                                                 })
                                             })
@@ -430,13 +421,12 @@ function Compare() {
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                                let AllCoins = response.data;
-
                                                 setCoinDataPie({
                                                     labels: [found1p.name, Found.name, found3p.name],
                                                     datasets: [{
                                                         label: 'Current Price in USD',
-                                                        data: [found1p.price_usd, Found.price_usd, found3p.price_usd]
+                                                        data: [found1p.price_usd, Found.price_usd, found3p.price_usd],
+                                                        backgroundColor: ["#8134DF", "#34DFD5", "#DFCE34"]
                                                     }]
                                                 })
                                             })
@@ -460,13 +450,12 @@ function Compare() {
 
                                             axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                                let AllCoins = response.data;
-
                                                 setCoinDataPie({
                                                     labels: [found1p.name, found2p.name, Found.name],
                                                     datasets: [{
                                                         label: 'Current Price in USD',
-                                                        data: [found1p.price_usd, found2p.price_usd, Found.price_usd]
+                                                        data: [found1p.price_usd, found2p.price_usd, Found.price_usd],
+                                                        backgroundColor: ["#8134DF", "#34DFD5", "#DFCE34"]
                                                     }]
                                                 })
                                             })
@@ -498,11 +487,9 @@ function Compare() {
                             </Container>
                         </Card>
                     </Col>
-
                 </Row>
 
                 <Row style={{ width: '100%', display: 'inline' }}>
-
                     <Card className="graph_card border-light" style={{ maxWidth: '90%' }}>
                         <Container>
                             <Row>
@@ -518,8 +505,6 @@ function Compare() {
 
                                         axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                            let AllCoins = response.data;
-
                                             setCoinDataRadar({
                                                 labels: ['Volume 24 per 1000', 'Volume 24a per 1000', 'Current Supply', 'Total Supply', 'Maximum Supply'],
                                                 datasets: [
@@ -527,19 +512,19 @@ function Compare() {
                                                         label: Foundr.name + ' Average Statistics',
                                                         data: [Foundr.volume24 / 1000, Foundr.volume24a / 1000, Foundr.csupply, Foundr.tsupply, Foundr.msupply],
                                                         backgroundColor: 'rgba(193, 66, 37, 0.2)',
-                                                        borderColor: 'rgba(193, 66, 37, 0.75)'
+                                                        borderColor: '#8134DF'
                                                     },
                                                     {
                                                         label: found2r.name + ' Average Statistics',
                                                         data: [found2r.volume24 / 1000, found2r.volume24a / 1000, found2r.csupply, found2r.tsupply, found2r.msupply],
                                                         backgroundColor: 'rgba(37, 166, 183, 0.2)',
-                                                        borderColor: 'rgba(37, 166, 183, 0.75)'
+                                                        borderColor: '#34DFD5'
                                                     },
                                                     {
                                                         label: found3r.name + ' Average Statistics',
                                                         data: [found3r.volume24 / 1000, found3r.volume24a / 1000, found3r.csupply, found3r.tsupply, found3r.msupply],
                                                         backgroundColor: 'rgba(220, 165, 63, 0.2)',
-                                                        borderColor: 'rgba(220, 165, 63, 0.75)'
+                                                        borderColor: '#DFCE34'
                                                     }
 
                                                 ]
@@ -574,19 +559,19 @@ function Compare() {
                                                         label: found1r.name + ' Average Statistics',
                                                         data: [found1r.volume24 / 1000, found1r.volume24a / 1000, found1r.csupply, found1r.tsupply, found1r.msupply],
                                                         backgroundColor: 'rgba(193, 66, 37, 0.2)',
-                                                        borderColor: 'rgba(193, 66, 37, 0.75)'
+                                                        borderColor: '#8134DF'
                                                     },
                                                     {
                                                         label: Foundr.name + ' Average Statistics',
                                                         data: [Foundr.volume24 / 1000, Foundr.volume24a / 1000, Foundr.csupply, Foundr.tsupply, Foundr.msupply],
                                                         backgroundColor: 'rgba(37, 166, 183, 0.2)',
-                                                        borderColor: 'rgba(37, 166, 183, 0.75)'
+                                                        borderColor: '#34DFD5'
                                                     },
                                                     {
                                                         label: found3r.name + ' Average Statistics',
                                                         data: [found3r.volume24 / 1000, found3r.volume24a / 1000, found3r.csupply, found3r.tsupply, found3r.msupply],
                                                         backgroundColor: 'rgba(220, 165, 63, 0.2)',
-                                                        borderColor: 'rgba(220, 165, 63, 0.75)'
+                                                        borderColor: '#DFCE34'
                                                     }
 
                                                 ]
@@ -612,7 +597,6 @@ function Compare() {
 
                                         axios.get('https://api.coinlore.net/api/tickers/').then((response) => {
 
-                                            let AllCoins = response.data;
 
                                             setCoinDataRadar({
                                                 labels: ['Volume 24 per 1000', 'Volume 24a per 1000', 'Current Supply', 'Total Supply', 'Maximum Supply'],
@@ -621,19 +605,19 @@ function Compare() {
                                                         label: found1r.name + ' Average Statistics',
                                                         data: [found1r.volume24 / 1000, found1r.volume24a / 1000, found1r.csupply, found1r.tsupply, found1r.msupply],
                                                         backgroundColor: 'rgba(193, 66, 37, 0.2)',
-                                                        borderColor: 'rgba(193, 66, 37, 0.75)'
+                                                        borderColor: '#8134DF'
                                                     },
                                                     {
                                                         label: found2r.name + ' Average Statistics',
                                                         data: [found2r.volume24 / 1000, found2r.volume24a / 1000, found2r.csupply, found2r.tsupply, found2r.msupply],
                                                         backgroundColor: 'rgba(37, 166, 183, 0.2)',
-                                                        borderColor: 'rgba(37, 166, 183, 0.75)'
+                                                        borderColor: '#34DFD5'
                                                     },
                                                     {
                                                         label: Foundr.name + ' Average Statistics',
                                                         data: [Foundr.volume24 / 1000, Foundr.volume24a / 1000, Foundr.csupply, Foundr.tsupply, Foundr.msupply],
                                                         backgroundColor: 'rgba(220, 165, 63, 0.2)',
-                                                        borderColor: 'rgba(220, 165, 63, 0.75)'
+                                                        borderColor: '#DFCE34'
                                                     }
 
                                                 ]
@@ -650,6 +634,7 @@ function Compare() {
 
                                     </select>
 
+                                    <br></br>
                                     <br></br>
 
                                     Current Supply vs Maximum Supply

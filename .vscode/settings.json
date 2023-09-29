@@ -5,5 +5,8 @@
         "msupply",
         "Standin",
         "tsupply"
+    ],
+    "cSpell.ignoreWords": [
+        "Coinrank"
     ]
 }

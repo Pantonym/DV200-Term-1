@@ -75,21 +75,21 @@ function Timeline() {
                             label: 'Bitcoin',
                             data: arrPriceChange[0],
                             backgroundColor: 'rgba(0, 247, 255, 1)',
-                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                            borderColor: 'rgba(0, 247, 255)',
                             tension: 0.25
                         },
                         {
                             label: 'Ethereum',
                             data: arrPriceChange[1],
                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                            borderColor: 'rgba(219, 47, 21)',
                             tension: 0.25
                         },
                         {
                             label: 'Tether',
                             data: arrPriceChange[2],
                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                            borderColor: 'rgba(220, 165, 63)',
                             tension: 0.25
                         }
                     ]
@@ -149,21 +149,21 @@ function Timeline() {
                                             label: Found.name,
                                             data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
                                             backgroundColor: 'rgba(0, 247, 255, 1)',
-                                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                                            borderColor: 'rgba(0, 247, 255)',
                                             tension: 0.25
                                         },
                                         {
                                             label: found2.name,
                                             data: [found2.percent_change_7d, found2.percent_change_24h, found2.percent_change_1h],
                                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                                            borderColor: 'rgba(219, 47, 21)',
                                             tension: 0.25
                                         },
                                         {
                                             label: found3.name,
                                             data: [found3.percent_change_7d, found3.percent_change_24h, found3.percent_change_1h],
                                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            borderColor: 'rgba(220, 165, 63)',
                                             tension: 0.25
                                         }
                                     ]
@@ -202,21 +202,21 @@ function Timeline() {
                                             label: found1.name,
                                             data: [found1.percent_change_7d, found1.percent_change_24h, found1.percent_change_1h],
                                             backgroundColor: 'rgba(0, 247, 255, 1)',
-                                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                                            borderColor: 'rgba(0, 247, 255)',
                                             tension: 0.25
                                         },
                                         {
                                             label: Found.name,
                                             data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
                                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                                            borderColor: 'rgba(219, 47, 21)',
                                             tension: 0.25
                                         },
                                         {
                                             label: found3.name,
                                             data: [found3.percent_change_7d, found3.percent_change_24h, found3.percent_change_1h],
                                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            borderColor: 'rgba(220, 165, 63)',
                                             tension: 0.25
                                         }
                                     ]
@@ -255,21 +255,21 @@ function Timeline() {
                                             label: found1.name,
                                             data: [found1.percent_change_7d, found1.percent_change_24h, found1.percent_change_1h],
                                             backgroundColor: 'rgba(0, 247, 255, 1)',
-                                            borderColor: 'rgba(0, 247, 255, 0.75)',
+                                            borderColor: 'rgba(0, 247, 255)',
                                             tension: 0.25
                                         },
                                         {
                                             label: found2.name,
                                             data: [found2.percent_change_7d, found2.percent_change_24h, found2.percent_change_1h],
                                             backgroundColor: 'rgba(219, 47, 21, 1)',
-                                            borderColor: 'rgba(219, 47, 21, 0.75)',
+                                            borderColor: 'rgba(219, 47, 21)',
                                             tension: 0.25
                                         },
                                         {
                                             label: Found.name,
                                             data: [Found.percent_change_7d, Found.percent_change_24h, Found.percent_change_1h],
                                             backgroundColor: 'rgba(220, 165, 63, 1)',
-                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            borderColor: 'rgba(220, 165, 63)',
                                             tension: 0.25
                                         }
                                     ]

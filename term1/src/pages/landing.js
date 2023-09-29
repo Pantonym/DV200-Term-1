@@ -91,9 +91,7 @@ function Landing() {
                 ]);
 
                 console.log(bitcoinData);
-
                 setLoading(false);
-
             })
             .catch((err) => {
                 // --Logs whichever error is applicable
@@ -112,31 +110,30 @@ function Landing() {
         <div className="LandingDisplay">
 
             <div>
-
                 {/* --First of two cards displaying the current two currency leaders */}
                 <Card className="crypto_card border-light">
-
                     <Container>
                         <Row>
-
+                            {/* 2. Added Features: Card Redesign */}
                             <Col>
-                                <Card.Body style={{ marginTop: '10%' }}>
+                                <Card.Body className="Text_Left">
 
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[0]}</Card.Title>
+                                    <Card.Title className="Libre Card_Title Bold">{coinNames[0]}</Card.Title>
                                     <Card.Text className="Mulish Font_Body">USD: {coinPrices[0]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[0]} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">{coinValue[0]} BTC</Card.Text>
                                     <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[0]}</Card.Text>
 
                                 </Card.Body>
                             </Col>
 
                             <Col>
-                                <div style={{ height: '250px' }}>
+                                <div className="ChartSize_Landing">
                                     <PieChart ChartData={{
-                                        labels: [coinNames[2], coinNames[1], coinNames[3]],
+                                        labels: [coinNames[0], coinNames[1], coinNames[2]],
                                         datasets: [{
                                             label: 'Price in Bitcoin',
-                                            data: [coinValue[2], coinValue[1], coinValue[3]]
+                                            data: [coinValue[0], coinValue[1], coinValue[2]],
+                                            backgroundColor: ["#8134DF", "#34DFD5", "#DFCE34"]
                                         }]
                                     }} />
                                 </div>
@@ -153,23 +150,24 @@ function Landing() {
                         <Row>
 
                             <Col>
-                                <Card.Body style={{ marginTop: '10%' }}>
+                                <Card.Body className="Text_Left">
 
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[1]}</Card.Title>
+                                    <Card.Title className="Libre Card_Title Bold">{coinNames[1]}</Card.Title>
                                     <Card.Text className="Mulish Font_Body">USD: {coinPrices[1]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[1]} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">{coinValue[1]} BTC</Card.Text>
                                     <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[1]}</Card.Text>
 
                                 </Card.Body>
                             </Col>
 
                             <Col>
-                                <div style={{ height: '250px' }}>
+                                <div className="ChartSize_Landing">
                                     <PieChart ChartData={{
-                                        labels: [coinNames[0], coinNames[1], coinNames[2]],
+                                        labels: [coinNames[1], coinNames[2], coinNames[3]],
                                         datasets: [{
                                             label: 'Price in USD',
-                                            data: [CoinPricesUnFormat[0], CoinPricesUnFormat[1], CoinPricesUnFormat[2]]
+                                            data: [CoinPricesUnFormat[1], CoinPricesUnFormat[2], CoinPricesUnFormat[3]],
+                                            backgroundColor: ["#34DFD5", "#DFCE34", "#DF3434"]
                                         }]
                                     }} />
                                 </div>
@@ -181,30 +179,30 @@ function Landing() {
                 </Card>
 
                 {/* --Cards 3-4 */}
-
                 <Card className="crypto_card border-light">
 
                     <Container>
                         <Row>
 
                             <Col>
-                                <Card.Body style={{ marginTop: '10%' }}>
+                                <Card.Body className="Text_Left">
 
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[3]}</Card.Title>
-                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[3]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[3]} BTC</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[3]}</Card.Text>
+                                    <Card.Title className="Libre Card_Title Bold">{coinNames[2]}</Card.Title>
+                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[2]}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">{coinValue[2]} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[2]}</Card.Text>
 
                                 </Card.Body>
                             </Col>
 
                             <Col>
-                                <div style={{ height: '250px' }}>
+                                <div className="ChartSize_Landing">
                                     <PieChart ChartData={{
-                                        labels: [coinNames[3], coinNames[4], coinNames[5]],
+                                        labels: [coinNames[2], coinNames[3], coinNames[4]],
                                         datasets: [{
-                                            label: 'Price in Bitcoin',
-                                            data: [coinValue[3], coinValue[4], coinValue[5]]
+                                            label: 'Current Rank',
+                                            data: [coinRank[2], coinRank[3], coinRank[4]],
+                                            backgroundColor: ["#DFCE34", "#DF3434", "#56DF34"]
                                         }]
                                     }} />
                                 </div>
@@ -221,23 +219,24 @@ function Landing() {
                         <Row>
 
                             <Col>
-                                <Card.Body style={{ marginTop: '10%' }}>
+                                <Card.Body className="Text_Left">
 
-                                    <Card.Title className="Libre Font_Title Bold">{coinNames[2]}</Card.Title>
-                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[2]}</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">In Bitcoin: {coinValue[2]} BTC</Card.Text>
-                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[2]}</Card.Text>
+                                    <Card.Title className="Libre Card_Title Bold">{coinNames[3]}</Card.Title>
+                                    <Card.Text className="Mulish Font_Body">USD: {coinPrices[3]}</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">{coinValue[3]} BTC</Card.Text>
+                                    <Card.Text className="Mulish Font_Body">Current Rank: {coinRank[3]}</Card.Text>
 
                                 </Card.Body>
                             </Col>
 
                             <Col>
-                                <div style={{ height: '250px' }}>
+                                <div className="ChartSize_Landing">
                                     <PieChart ChartData={{
-                                        labels: [coinNames[0], coinNames[1], coinNames[2]],
+                                        labels: [coinNames[3], coinNames[4], coinNames[5]],
                                         datasets: [{
-                                            label: 'Current Rank',
-                                            data: [coinRank[0], coinRank[1], coinRank[2]]
+                                            label: 'Price in Bitcoin',
+                                            data: [coinValue[3], coinValue[4], coinValue[5]],
+                                            backgroundColor: ["#DF3434", "#56DF34", "#3734DF"]
                                         }]
                                     }} />
                                 </div>
@@ -257,7 +256,6 @@ function Landing() {
             <div>
 
                 {/* Summary/Breakdown */}
-
                 <Card className="crypto_card_desc border-light">
 
                     <Card.Body>
@@ -286,12 +284,15 @@ function Landing() {
 
             </div>
 
-            {/* Bitcoin Summary */}
-            <Card className="crypto_card_desc border-light">
+            <br></br>
+            <br></br>
 
+            {/* Bitcoin Summary */}
+            <h1 className="Libre" style={{ color: 'white', marginBottom: '0px' }}>Bitcoin Summary:</h1>
+
+            <Card className="crypto_card_desc border-light">
                 <Container>
                     <Row>
-
                         <Col>
 
                             <div style={{ height: '550px', marginLeft: '100px', paddingBottom: '0px' }}>
@@ -306,25 +307,21 @@ function Landing() {
                                             label: 'Percentage change',
                                             data: [bitcoinData[0].percent_change_1h, bitcoinData[0].percent_change_24h, bitcoinData[0].percent_change_7d],
                                             backgroundColor: 'rgba(193, 66, 37, 0.2)',
-                                            borderColor: 'rgba(193, 66, 37, 0.75)',
+                                            borderColor: 'rgba(193, 66, 37, 1)',
                                             tension: 0.25
                                         },
                                         {
                                             label: 'Supply in 10 millions',
                                             data: [bitcoinData[0].csupply / 10000000, bitcoinData[0].tsupply / 10000000, bitcoinData[0].msupply / 10000000],
                                             backgroundColor: 'rgba(37, 166, 183, 0.2)',
-                                            borderColor: 'rgba(37, 166, 183, 0.75)',
+                                            borderColor: 'rgba(37, 166, 183, 1)',
                                             tension: 0.25
                                         },
                                         {
-                                            //545 749 150 154
-                                            //19 288 102
-                                            //18 381 760 959
-                                            //19 916 646 676
                                             label: 'Volume traded in 10 billions',
                                             data: [bitcoinData[0].volume24 / 10000000000, bitcoinData[0].volume24a / 10000000000, bitcoinData[0].market_cap_usd / 100000000000],
                                             backgroundColor: 'rgba(220, 165, 63, 0.2)',
-                                            borderColor: 'rgba(220, 165, 63, 0.75)',
+                                            borderColor: 'rgba(220, 165, 63, 1)',
                                             tension: 0.25
                                         }
 
@@ -336,17 +333,20 @@ function Landing() {
                     </Row>
 
                     <Row>
-
                         <Col>
                             <Card.Body>
+                                <Row>
+                                    <Col><Card.Text className="Mulish Font_Body">USD: ${bitcoinData[0].price_usd}</Card.Text></Col>
+                                    <Col><Card.Text className="Mulish Font_Body">{bitcoinData[0].price_btc} BTC</Card.Text></Col>
+                                    <Col><Card.Text className="Mulish Font_Body">Current Rank: {bitcoinData[0].rank}</Card.Text></Col>
+                                </Row>
 
-                                <Card.Title className="Libre Font_Title Bold">{bitcoinData[0].name}</Card.Title>
-                                <Card.Text className="Mulish Font_Body">USD: ${bitcoinData[0].price_usd}</Card.Text>
-                                <Card.Text className="Mulish Font_Body">In Bitcoin: {bitcoinData[0].price_btc} BTC</Card.Text>
-                                <Card.Text className="Mulish Font_Body">Current Rank: {bitcoinData[0].rank}</Card.Text>
-                                <Card.Text className="Mulish Font_Body">Current Supply: {bitcoinData[0].csupply}</Card.Text>
-                                <Card.Text className="Mulish Font_Body">Maximum Supply: {bitcoinData[0].msupply}</Card.Text>
-
+                                <br></br>
+                                
+                                <Row>
+                                    <Col><Card.Text className="Mulish Font_Body">Current Supply: {bitcoinData[0].csupply}</Card.Text></Col>
+                                    <Col><Card.Text className="Mulish Font_Body">Maximum Supply: {bitcoinData[0].msupply}</Card.Text></Col>
+                                </Row>
                             </Card.Body>
                         </Col>
 
