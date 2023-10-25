@@ -225,7 +225,7 @@ function Compare() {
             <Container style={{ maxWidth: '90%' }}>
                 <Row>
                     <Col>
-                        <Card className="graph_card border-light" style={{marginLeft: '18%'}}>
+                        <Card className="graph_card border-light" style={{ marginLeft: '18%' }}>
                             <Container>
                                 <Row>
 
