@@ -47,6 +47,8 @@
 - [Features and Functionality](#features-and-functionality)
 - [Development Process](#development-process)
   - [Architecture](#architecture)
+  - [Design Frame](#design-frame)
+  - [Solution](#solution)
   - [Theme](#theme)
   - [What was refined?](#what-was-refined)
     - [Previous Mockups](#previous-mockups)
@@ -237,6 +239,10 @@ No Else statement was needed, I simply had a second return below this one that w
 ## Development Process
 ### Architecture
 The application consists of multiple react components and pages.
+### Design Frame
+How might we gather information regarding cryptocurrency and display it in charts that a user can easily read and edit?
+### Solution
+The CrypTracker website, which gathers information using an API and displays it in charts using plugins and a JavaScript library. 
 ### Theme
 I chose a dark theme as it gives a modern feel to the website. It uses neon-like colours to evoke the technological aspect of cryptocurrency as a subject, also choosing a minimalist design to work with the modern theme. Each graph on the compare and timeline pages can be edited by choosing which currencies you want to display, and the landing page features a  description of the project as well as a dashboard with information on the recent top coins in the market. A more detailed description of Bitcoin is also available on this page.
 ### What was refined?
